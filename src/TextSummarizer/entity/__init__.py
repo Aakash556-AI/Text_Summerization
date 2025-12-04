@@ -9,4 +9,11 @@ class DataIngestionConfig:
     raw_data_dir: Path
     local_data_file: Path
     unzipped_data_dir: Path
+
+@dataclass(frozen=True)
+class DataValidationConfig:
+    root_dir: Path
+    STATUS_FILE: Path
+    ALL_REQUIRED_FILES: list
+
     
