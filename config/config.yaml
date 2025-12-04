@@ -1,0 +1,11 @@
+# everything will be stored in artifact folder 
+  
+artifacts_root: artifacts
+
+data_ingestion:
+  root_dir: artifacts/data_ingestion
+  raw_data_dir: artifacts/data_ingestion/raw_data
+  dataset_download_url: "https://github.com/Aakash556-AI/Datasets/raw/refs/heads/main/Samsum.zip"
+  local_data_file: artifacts/data_ingestion/data.zip
+  unzip_dir: artifacts/data_ingestion/unzipped
+  unzipped_data_dir: artifacts/data_ingestion/unzipped_data
