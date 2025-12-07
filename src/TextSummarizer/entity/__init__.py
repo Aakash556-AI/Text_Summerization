@@ -16,4 +16,9 @@ class DataValidationConfig:
     STATUS_FILE: Path
     ALL_REQUIRED_FILES: list
 
+@dataclass(frozen=True)
+class DataTransformationConfig:
+    root_dir: Path
+    transformed_data_dir: Path
+    tokenizer_name: str
     

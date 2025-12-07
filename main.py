@@ -3,6 +3,7 @@ from TextSummarizer.custom_logging import logger
 from TextSummarizer.pipeline.stage_01_data_ingestion import DataIngestionTrainingPipeline
 from TextSummarizer.pipeline.satge_02_data_validation import DataValidationTrainingPipeline
 from TextSummarizer.config.configuration import ConfigurationManager
+from TextSummarizer.pipeline.stage_03_data_transformation import DataTransformationTrainingPipeline
 
 stage_name = "Data Ingestion Stage"
 
@@ -30,6 +31,20 @@ try:
     logger.info(f">>>>>> stage {stage_name} started <<<<<<")
     data_validation = DataValidationTrainingPipeline(config=None)
     data_validation.main()
+    logger.info(f">>>>>> stage {stage_name} completed <<<<<<\n\nx==========x")
+except Exception as e:
+    logger.exception(f"Error in stage {stage_name}: {e}")
+    raise e
+
+
+stage_name = "Data Transformation Stage"
+try:
+    logger.info(f">>>>>> stage {stage_name} started <<<<<<")
+
+    config_manager = ConfigurationManager()
+    data_transformation_config = config_manager.get_data_transformation_config()
+    data_transformation = DataTransformationTrainingPipeline(config=None)
+    data_transformation.main()
     logger.info(f">>>>>> stage {stage_name} completed <<<<<<\n\nx==========x")
 except Exception as e:
     logger.exception(f"Error in stage {stage_name}: {e}")
