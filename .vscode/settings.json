@@ -1,0 +1,11 @@
+{
+    "python.defaultInterpreterPath": "/Users/akashkumarsinha/anaconda3/bin/python",
+    "python.terminal.activateEnvironment": true,
+    "code-runner.runInTerminal": true,
+    "code-runner.executorMap": {
+        "python": "/Users/akashkumarsinha/anaconda3/bin/python"
+    },
+    "python.analysis.extraPaths": [
+        "./src"
+    ]
+}

@@ -1,6 +1,6 @@
 import setuptools
 # --- IGNORE ---
-with open("README.md", "r", encoding="utf-8") as fh:
+with open("/Users/akashkumarsinha/Desktop/Text_summerization/Text_Summerization/README.md", "r", encoding="utf-8") as fh:
     long_discription = fh.read()
 
 __version__ = "0.0.0"

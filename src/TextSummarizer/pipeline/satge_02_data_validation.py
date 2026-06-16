@@ -9,11 +9,5 @@ class DataValidationTrainingPipeline:
         self.config = config
 
     def main(self):
-        config_manager = ConfigurationManager()
-
-        data_validation_config = config_manager.get_data_validation_config()
-        data_validation = DataValidation(config=data_validation_config)
-        status = data_validation.validate_required_files()
-        
-
-    
+        data_validation = DataValidation(config=self.config)
+        data_validation.validate_required_files()
