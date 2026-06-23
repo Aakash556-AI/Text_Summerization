@@ -7,7 +7,7 @@ from TextSummarizer.pipeline.stage_03_data_transformation import DataTransformat
 from TextSummarizer.pipeline.stage_04_model_trainer import ModelTrainerTrainingPipeline
 from TextSummarizer.config.configuration import ConfigurationManager
 from TextSummarizer.pipeline.stage_05_model_evaluation import ModelEvaluationtrainningpipeline
-
+from streamlit import metric
 
 
 
@@ -73,7 +73,7 @@ except Exception as e:
 stage_name = "Model Evaluation stage"
 try:
     logger.info(f">>>>>>stage{stage_name} started <<<<<<<")
-    model_evoluation = ModelEvaluationtrainningpipeline
+    model_evoluation = ModelEvaluationtrainningpipeline()
     model_evoluation.main()
     logger.info(f"<<<<<<<stagge{stage_name} completed <<<<<<<<")
 except Exception as e:

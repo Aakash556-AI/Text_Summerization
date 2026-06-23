@@ -163,7 +163,7 @@ class ModelTrainer:
                 warmup_steps=self.config.warmup_steps,
                 weight_decay=self.config.weight_decay,
                 logging_steps=self.config.logging_steps,
-                save_steps=int(self.config.save_steps),
+                
                 gradient_accumulation_steps=self.config.gradient_accumulation_steps,
                 report_to=self.config.report_to,
                 eval_strategy="steps",
@@ -172,8 +172,10 @@ class ModelTrainer:
                 remove_unused_columns=True,
                 dataloader_num_workers=dataloader_workers,
                 # keep only a small number of checkpoints on disk
-                save_total_limit=2,
+
+               
                 gradient_checkpointing=True,
+                save_strategy="no"
             )
 
         training_args = build_training_args()
@@ -235,7 +237,7 @@ class ModelTrainer:
 
         # ---------------- Save ----------------
         model.save_pretrained(
-            os.path.join(self.config.root_dir, "model_pegasus")
+            os.path.join(self.config.root_dir, "model_pegasus",safe_serialization=False)
         )
         tokenizer.save_pretrained(
             os.path.join(self.config.root_dir, "tokenizer")
